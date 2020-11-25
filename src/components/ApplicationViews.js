@@ -3,6 +3,7 @@ import { LocationProvider } from "./locations/LocationProvider"
 import { LocationList } from "./locations/LocationList"
 import { ProductProvider } from "./products/ProductProvider"
 import { ProductList } from "./products/ProductList"
+import { ProductTypeProvider } from "./producttypes/ProductTypesProvider"
 
 export const ApplicationViews = (props) => {
   return (
@@ -14,9 +15,11 @@ export const ApplicationViews = (props) => {
       </LocationProvider>
 
       <ProductProvider>
-        <Route path="/products">
-          <ProductList />
-        </Route>
+        <ProductTypeProvider>
+          <Route path="/products">
+            <ProductList />
+          </Route>
+        </ProductTypeProvider>
       </ProductProvider>
     </>
   )
