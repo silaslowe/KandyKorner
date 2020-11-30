@@ -20,7 +20,6 @@ export const LocationProvider = (props) => {
       body: JSON.stringify(location),
     }).then(getLocations)
   }
-  console.log("PROVIDER", locations)
   return (
     <LocationContext.Provider value={{ locations, addLocation, getLocations }}>
       {props.children}

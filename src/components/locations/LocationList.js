@@ -8,10 +8,11 @@ export const LocationList = () => {
   useEffect(() => {
     console.log("Location: Initial render")
     getLocations()
-    // console.log("AFTER GET IN LIST", locations)
   }, [])
+
   return (
     <div className="locations">
+      <h1>Locations</h1>
       {locations.map((loc) => (
         <Location key={loc.id} loc={loc} />
       ))}
