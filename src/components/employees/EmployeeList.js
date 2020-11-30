@@ -3,11 +3,11 @@ import { EmployeeContext, EmployeeProvider } from "./EmployeeProvider"
 import { Employee } from "./Employee"
 
 export const EmployeeList = (props) => {
-  const { employees, getEmployees, getEmployeeById } = useContext(EmployeeContext)
+  const { employees, getEmployees, getEmployeesWithLoc } = useContext(EmployeeContext)
 
   useEffect(() => {
-    console.log("Employee initial render")
-    getEmployees()
+    getEmployeesWithLoc()
+    console.log(employees)
   }, [])
 
   return (
