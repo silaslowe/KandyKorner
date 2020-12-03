@@ -6,7 +6,7 @@ export const OrderList = (props) => {
   const { orders, getOrders } = useContext(OrderContext)
 
   useEffect(() => {
-    getOrders().then(() => console.log(orders))
+    getOrders()
   }, [])
 
   return (

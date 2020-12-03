@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { ProductContext } from "./ProductProvider"
 
 export const ProductSearch = () => {
-  const { setSearchTerms } = useContext(ProductContext)
+  const { setSearchTerm } = useContext(ProductContext)
 
   return (
     <>
@@ -11,7 +11,7 @@ export const ProductSearch = () => {
         type="text"
         className="input--wide"
         onKeyUp={(keyEvent) => {
-          setSearchTerms(keyEvent.target.value)
+          setSearchTerm(keyEvent.target.value)
         }}
         placeholder="Search for a product..."
       />

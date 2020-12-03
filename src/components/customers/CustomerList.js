@@ -17,11 +17,10 @@ export const CustomerList = (props) => {
       {customers
         .map((customer) => {
           customer.orders = orders.filter((o) => o.customerId === customer.id)
-          console.log(customers)
           return <Customer key={customer.id} customer={customer} />
         })
         .sort((a, b) => {
-          return b.props.customer.orders.length - b.props.customer.orders.length
+          return b.props.customer.orders.length - a.props.customer.orders.length
         })}
     </div>
   )

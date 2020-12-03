@@ -3,7 +3,6 @@ import { OrderContext } from "../orders/OrderProvider"
 
 export const Product = ({ product, productType }) => {
   const { addOrder } = useContext(OrderContext)
-  console.log(localStorage)
   return (
     <section className="product">
       <h3 className="product__name">{product.candyName}</h3>
