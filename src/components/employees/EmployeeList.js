@@ -7,7 +7,6 @@ export const EmployeeList = (props) => {
 
   useEffect(() => {
     getEmployeesWithLoc()
-    console.log(employees)
   }, [])
 
   return (
