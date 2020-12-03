@@ -13,6 +13,8 @@ import { OrderProvider } from "./orders/OrderProvider"
 import { OrderList } from "./orders/OrderList"
 import { CustomerProvider } from "./customers/CustomerProvider"
 import { CustomerList } from "./customers/CustomerList"
+import { InventoriesProvider } from "./inventory/InventoryProvider"
+import { LocationDetail } from "./locations/LocationDetail"
 
 // console.log("EMMMM", EmployeeList)
 // console.log("LOCCCC", LocationList)
@@ -22,9 +24,14 @@ export const ApplicationViews = (props) => {
     <>
       {/* Location */}
       <LocationProvider>
-        <Route path="/locations">
-          <LocationList />
-        </Route>
+        <InventoriesProvider>
+          <Route exact path="/locations" render={(props) => <LocationList {...props} />} />
+
+          <Route
+            path="/locations/:locationId(\d+)"
+            render={(props) => <LocationDetail {...props} />}
+          />
+        </InventoriesProvider>
       </LocationProvider>
 
       {/* Product */}
